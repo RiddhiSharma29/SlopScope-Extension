@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlopScope Dashboard</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="head">
+    <h1>SlopScope</h1>
+    <p class="muted">Every page you scan, ranked. Compare two scans to see what a fix changed.</p>
+    <div class="row">
+      <button id="export-json">Export JSON</button>
+      <button id="export-csv">Export CSV</button>
+      <label class="importer"><span class="tag">Import JSON</span> <input id="import" type="file" accept=".json"></label>
+      <button id="clear">Clear history</button>
+    </div>
+  </header>
+
+  <section class="stats" aria-label="Summary" id="stats"></section>
+
+  <section class="block">
+    <h2 class="label">Hall of Slop</h2>
+    <div class="row"><button id="compare" disabled>Compare selected (pick 2)</button><span id="cmp-hint" class="muted mono"></span></div>
+    <div class="scroll">
+      <table id="table">
+        <thead>
+          <tr><th></th><th>Score</th><th>Site</th><th class="cat-ui">UI</th><th class="cat-text">Text</th><th class="cat-image">Image</th><th class="cat-code">Code</th><th>Findings</th><th>Scanned</th><th></th></tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="compare-panel" hidden>
+    <h2 class="label">Comparison</h2>
+    <div id="compare-body"></div>
+  </section>
+
+  <section class="block" id="detail-panel" hidden>
+    <h2 class="label" id="detail-title">Scan detail</h2>
+    <div id="detail-body"></div>
+  </section>
+
+  <section class="block">
+    <h2 class="label">Most triggered rules</h2>
+    <div id="rules"></div>
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

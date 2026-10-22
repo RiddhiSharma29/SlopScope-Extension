@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlopScope</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <div class="tag muted">SlopScope</div>
+      <div id="host" class="mono host">Scanning…</div>
+    </div>
+    <div class="score">
+      <span id="score" class="mono">--</span>
+      <span id="verdict" class="tag"></span>
+    </div>
+  </header>
+
+  <section id="cats" class="cats" aria-label="Score by category"></section>
+
+  <div class="actions row">
+    <button id="rescan" class="primary">Rescan</button>
+    <button id="toggle">Overlay</button>
+    <button id="fixall">Fix all</button>
+    <button id="dash">Dashboard</button>
+  </div>
+  <div id="status" class="status mono muted" role="status"></div>
+
+  <main id="list" class="list"></main>
+  <script src="popup.js"></script>
+</body>
+</html>

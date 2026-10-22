@@ -1,0 +1,33 @@
+/* Shared by popup and dashboard. Sharp edges, no gradients, no cards-in-cards: SlopScope should pass its own scan. */
+:root {
+  --ink: #111111;
+  --muted: #4d4d4d;
+  --rule: #111111;
+  --soft: #d9d9d9;
+  --bg: #ffffff;
+  --signal: #d9300f;
+  --ui: #d9300f;
+  --text: #0b6bcb;
+  --image: #0a7d4f;
+  --code: #b36b00;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --sans: "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 var(--sans); }
+h1, h2, h3 { margin: 0; font-weight: 700; }
+button {
+  font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: 0.04em;
+  background: var(--bg); color: var(--ink); border: 1px solid var(--ink); padding: 6px 10px; cursor: pointer;
+}
+button:hover { background: var(--ink); color: var(--bg); }
+button.primary { background: var(--ink); color: var(--bg); }
+button.primary:hover { background: var(--signal); border-color: var(--signal); }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+.row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.bar { height: 8px; background: var(--soft); }
+.bar > i { display: block; height: 100%; background: var(--ink); }
+.cat-ui { color: var(--ui); } .cat-text { color: var(--text); } .cat-image { color: var(--image); } .cat-code { color: var(--code); }
+.tag { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: 0.05em; }

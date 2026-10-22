@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "SlopScope",
+  "version": "0.1.0",
+  "description": "Find AI slop on any web page: UI, text, images and code. Score it, locate it, fix it.",
+  "permissions": ["storage", "activeTab"],
+  "background": { "service_worker": "src/background.js" },
+  "action": { "default_title": "SlopScope", "default_popup": "popup/popup.html" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/util.js",
+        "src/rules/ui.js",
+        "src/rules/text.js",
+        "src/rules/image.js",
+        "src/rules/code.js",
+        "src/score.js",
+        "src/scanner.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
